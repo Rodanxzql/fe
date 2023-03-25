@@ -52,7 +52,7 @@ export default{
         
         async getProduct(id) {
         try {
-          const response = await axios.get(`https://banxedap-backend-api.onrender.com/${this.$route.params.id}`);
+          const response = await axios.get(`https://banxedap-backend-api.onrender.com/api/catproducts/${this.$route.params.id}`);
           this.product = response.data;
         } catch (err) {
           console.log(err);
