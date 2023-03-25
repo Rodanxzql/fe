@@ -135,8 +135,6 @@ import axios from 'axios';
 
 
 export default {
-
-
     data(){
       return{
         product:[],
@@ -179,9 +177,7 @@ export default {
     
     created() {
     this.getProducts();
-    
     },
-    
 
   methods: {
     addToCart(itemToAdd){

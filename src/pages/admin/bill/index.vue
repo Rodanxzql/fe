@@ -25,7 +25,7 @@
             <a class="btn btn-danger "
               @click="deleteBill(item.id)"
               >xóa</a>
-              <button  type="button" class="btn btn-primary"
+              <button v-show="item.status=='0'" type="button" class="btn btn-primary"
                       data-bs-toggle="modal" data-bs-target="#staticBackdrop-edit"
                       @click="takeID(item.id)">
                       Xác nhận
@@ -43,6 +43,7 @@ export default{
     data(){
         return{
             bill:[],
+            
         }
     },
 
@@ -64,6 +65,7 @@ export default{
     //xóa bill
     async deleteBill(id) {
       try {
+
         await axios.delete(`https://banxedap-backend-api.onrender.com/api/bills/${id}`);
         this.getBills();
       } catch (err) {
@@ -73,6 +75,7 @@ export default{
     //xác nhận bill
     async takeID(id){
         try {
+          this.take="1"
         await axios.put(`https://banxedap-backend-api.onrender.com/api/bills/${id}`);
         this.getBills();
       } catch (err) {

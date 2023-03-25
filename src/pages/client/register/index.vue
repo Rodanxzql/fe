@@ -24,33 +24,24 @@
                 </div>
                 <!--Name-->
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example3">Email</label>
-                  <input type="email" id="form3Example3" v-model="email" class="form-control form-control-lg"
-                    placeholder="Email" />
-                </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example3">Tên:</label>
-                  <input type="text" id="form3Example3" v-model="name" class="form-control form-control-lg"
-                    placeholder="Tên" />
+                  <input type="Text" id="form3Example3" v-model="username" class="form-control form-control-lg"
+                    placeholder="Username" />
+                  <label class="form-label" for="form3Example3">Username</label>
                 </div>
 
       
                 <!-- Password input -->
                 <div class="form-outline mb-3">
-                  <label class="form-label" for="form3Example4">Mật khẩu:</label>
                   <input type="password" id="form3Example4" v-model="password" class="form-control form-control-lg"
                     placeholder="Mật khẩu" />
+                  <label class="form-label" for="form3Example4">Mật khẩu</label>
                 </div>
                 <div class="form-outline mb-3">
-                  <label class="form-label" for="form3Example4">Địa chỉ:</label>
-                  <input type="text" id="form3Example4" v-model="address" class="form-control form-control-lg"
-                    placeholder="Địa chỉ" />
+                  <input type="password" id="form3Example4" v-model="password_repeat" class="form-control form-control-lg"
+                    placeholder="Nhập lại mật khẩu" />
+                  <label class="form-label" for="form3Example4">Nhập lại mật khẩu</label>
                 </div>
-                <div class="form-outline mb-3">
-                  <label class="form-label" for="form3Example4">Số điện thoại:</label>
-                  <input type="number" id="form3Example4" v-model="phone" class="form-control form-control-lg"
-                    placeholder="Số điện thoại" />
-                </div>
+      
 
       
                 <div class="text-center text-lg-start mt-4 pt-2">
@@ -71,11 +62,9 @@
   export default{
     data(){
       return{
-        email:'',
-        name:'',
+        username:'',
         password:'',
-        address:'',
-        phone:'',
+        password_repeat:'',
         
       }
     },
@@ -83,20 +72,12 @@
      
       async handleSubmit(){
 
-        const data = {
-          email: this.email,
-          name: this.name,
-          password: this.password,
-          address: this.address,
-          phone: this.phone,
-
-        } 
-        try {
-        axios.post('https://banxedap-backend-api.onrender.com/users/register',data);
-          
-        } catch (error) {
-          console.log(error)
-        }
+        const response = await axios.post('https://banxedap-backend-api.onrender.com/api/sign-up',{
+        username: this.username,
+        password: this.password,
+        password_repeat: this.password_repeat,
+        
+      });
         this.$router.push('/login')
       },
     }

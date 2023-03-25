@@ -99,7 +99,8 @@
         const data = {
             cat_name:this.cat_name
         }
-        axios.post('https://banxedap-backend-api.onrender.com/api/category',data,{}).then((res)=>{
+        axios.post('https://banxedap-backend-api.onrender.com/api/category',data,{
+        }).then((res)=>{
           console.log(res)
         })
       },  

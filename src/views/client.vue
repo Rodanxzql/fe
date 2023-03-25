@@ -7,7 +7,6 @@
 
       
 </template>
-
 <script>
 import "../assets/css/client.css";
 import navbar from "../pages/client/component/navbar.vue";

@@ -24,7 +24,13 @@
                            <i class="fas fa-envelope"></i>
                        </span>
                        <span class="fw-light">
-                           hatanluan@gmail.com
+                           DH51904938-Đặng Nguyễn Vương
+                       </span>
+                       <span class="fw-light">
+                           DH51903951-Hà Tấn Luân
+                       </span>
+                       <span class="fw-light">
+                           DH51900510-Trịnh Hoàng Thành
                        </span>
                    </div>
                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
